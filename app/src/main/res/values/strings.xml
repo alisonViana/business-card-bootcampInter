@@ -9,4 +9,5 @@
     <string name="label_btt_confirm">Confirmar</string>
     <string name="alertdialog_title">Selecione uma cor</string>
     <string name="text_exemple">EXEMPLO</string>
+    <string name="hint_color">Selecione a cor de fundo</string>
 </resources>
