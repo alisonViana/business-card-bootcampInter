@@ -6,7 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import br.com.dio.businesscard.R
 import br.com.dio.businesscard.databinding.ActivityAddBusinessCardBinding
 
-class AddBusinessCardActivity : AppCompatActivity() {
+class AddBusinessCardActivity : AppCompatActivity(){
 
     private val binding by lazy{ActivityAddBusinessCardBinding.inflate(layoutInflater)}
 
@@ -26,9 +26,7 @@ class AddBusinessCardActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(this)
 
             builder.apply {
-                setPositiveButton("Selecionar") { _, _ ->
-                    // faz alguma coisa
-                }
+                setPositiveButton("Selecionar", null)
                 setNegativeButton("Cancelar", null)
                     .setView(R.layout.color_picker_alertdialog)
                     .show()
