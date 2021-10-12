@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/activity_add_business_card.xml" value="0.25" />
-        <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/activity_color_picker.xml" value="0.5" />
+        <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/activity_color_picker_alertdialog.xml" value="0.1" />
+        <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/activity_main.xml" value="0.3125" />
         <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/color_picker_alertdialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/item_business_card.xml" value="0.33" />
         <entry key="..\:/Documentos/Programacao_Android/DIO/BusinessCard/app/src/main/res/layout/pick_color_alertdialog.xml" value="0.25" />
