@@ -53,7 +53,8 @@
             app:layout_constraintTop_toTopOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:hint="@string/hint_name">
+            android:hint="@string/hint_name"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

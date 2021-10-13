@@ -33,8 +33,7 @@
             android:layout_height="124dp"
             app:layout_constraintBottom_toTopOf="@id/sb_red"
             app:layout_constraintTop_toTopOf="@id/tv_title_color_picker"
-            tools:background="@color/purple_200"
-            />
+            tools:background="@android:color/holo_red_dark" />
 
         <TextView
             android:layout_width="match_parent"
@@ -78,42 +77,71 @@
             android:thumbTint="@android:color/holo_blue_dark"
             app:layout_constraintTop_toBottomOf="@id/sb_green" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_color"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:hint="@string/hint_color"
-            android:inputType="textCapWords"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/sb_blue" />
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sb_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapWords"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sb_blue"
+            tools:text="#F122B459" />
+
+        <ImageView
+            android:id="@+id/iv_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            app:layout_constraintStart_toStartOf="@id/tv_color"
+            app:layout_constraintEnd_toEndOf="@id/tv_color"
+            app:layout_constraintTop_toBottomOf="@id/tv_color"
+            tools:background="@android:color/holo_red_dark"
+            />
+
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_pick_color"
-            app:layout_constraintTop_toBottomOf="@id/edt_color"
             android:text="@string/btn_cancel"
             android:textSize="12sp"
-            />
+            app:layout_constraintEnd_toStartOf="@id/btn_confirm_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_color" />
 
         <Button
-            android:id="@+id/btn_pick_color"
+            android:id="@+id/btn_confirm_color"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:layout_constraintStart_toEndOf="@id/btn_cancel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edt_color"
             android:text="@string/btn_pick_color"
             android:textSize="12sp"
-            />
-
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/tv_color" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,37 +1,40 @@
 package br.com.dio.businesscard.ui
 
+import android.content.Intent
 import android.graphics.Color
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.SeekBar
-import android.widget.TextView
+import android.widget.*
 import br.com.dio.businesscard.R
-import br.com.dio.businesscard.databinding.ActivityColorPickerBinding
 
 class ColorPickerActivity : AppCompatActivity() {
-
-    private val binding by lazy { ActivityColorPickerBinding.inflate(layoutInflater) }
 
     private lateinit var tvTitleColorPicker: TextView
     private lateinit var ivBackground: ImageView
     private lateinit var sbRed: SeekBar
     private lateinit var sbGreen: SeekBar
     private lateinit var sbBlue: SeekBar
-    private lateinit var btnColorPicker: Button
+    private lateinit var btnCancel: Button
+    private lateinit var btnConfirm: Button
+    private lateinit var tvColor: TextView
+    private lateinit var ivLine: ImageView
+    private var initColor: Int = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_color_picker)
 
-
-
         setView()
-        setListeners()
-        setBackgroundExample()
+        getExtras()
+        setSeekBarsListeners()
+        setButtonsListeners()
+    }
+
+    private fun getExtras() {
+        initColor = intent.getIntExtra(EXTRA_COLOR, DEFAULT_COLOR)
+        setBackgroundExample(true)
     }
 
     private fun setView() {
@@ -40,16 +43,30 @@ class ColorPickerActivity : AppCompatActivity() {
         sbRed = findViewById(R.id.sb_red)
         sbGreen = findViewById(R.id.sb_green)
         sbBlue = findViewById(R.id.sb_blue)
+        btnCancel = findViewById(R.id.btn_cancel)
+        btnConfirm = findViewById(R.id.btn_confirm_color)
+        tvColor = findViewById(R.id.tv_color)
+        ivLine = findViewById(R.id.iv_line)
     }
 
-    private fun setBackgroundExample() {
+    private fun setBackgroundExample(init: Boolean = false) {
+        val color = if (init) initColor else getBackgroundColor()
+
+        ivBackground.setBackgroundColor(color)
+        ivLine.setBackgroundColor(color)
+        tvColor.text = "#%H".format(color)
+    }
+
+    private fun getBackgroundColor(): Int{
         val redValue = sbRed.progress
         val greenValue = sbGreen.progress
         val blueValue = sbBlue.progress
-        ivBackground.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue))
+
+        return Color.rgb(redValue, greenValue, blueValue)
     }
 
-    private fun setListeners() {
+
+    private fun setSeekBarsListeners() {
         sbRed.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 setBackgroundExample()
@@ -82,5 +99,23 @@ class ColorPickerActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(p0: SeekBar?) {}
 
         })
+    }
+
+    private fun setButtonsListeners() {
+        btnConfirm.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra(EXTRA_COLOR, getBackgroundColor())
+            setResult(RESULT_OK, intent)
+            finish()
+        }
+
+        btnCancel.setOnClickListener {
+            finish()
+        }
+    }
+
+    companion object {
+        const val EXTRA_COLOR: String = "color"
+        const val DEFAULT_COLOR: Int = Color.GRAY
     }
 }
