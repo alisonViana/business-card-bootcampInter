@@ -13,4 +13,5 @@
     <string name="show_success">"Cartão cadastrado com sucesso!"</string>
     <string name="btn_cancel">Cancelar</string>
     <string name="btn_pick_color">Selecionar</string>
+    <string name="label_share">Compartilhar</string>
 </resources>

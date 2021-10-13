@@ -35,7 +35,6 @@ class AddBusinessCardActivity : AppCompatActivity(){
 
     private var backgroundColor: Int? = DEFAULT_COLOR
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -53,9 +52,10 @@ class AddBusinessCardActivity : AppCompatActivity(){
         }
 
         binding.btnColorPicker.setOnClickListener {
-            val intent = Intent(this, ColorPickerActivity::class.java)
-            intent.putExtra(EXTRA_COLOR, backgroundColor)
-            startForResult.launch(intent)
+            Intent(this, ColorPickerActivity::class.java).apply {
+                putExtra(EXTRA_COLOR, backgroundColor)
+                startForResult.launch(this)
+            }
         }
 
         binding.btnConfirm.setOnClickListener {

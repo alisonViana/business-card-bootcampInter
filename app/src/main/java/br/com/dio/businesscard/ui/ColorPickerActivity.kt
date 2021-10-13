@@ -103,9 +103,10 @@ class ColorPickerActivity : AppCompatActivity() {
 
     private fun setButtonsListeners() {
         btnConfirm.setOnClickListener {
-            val intent = Intent()
-            intent.putExtra(EXTRA_COLOR, getBackgroundColor())
-            setResult(RESULT_OK, intent)
+            Intent().apply {
+                putExtra(EXTRA_COLOR, getBackgroundColor())
+                setResult(RESULT_OK, this)
+            }
             finish()
         }
 
