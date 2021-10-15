@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +16,8 @@ import br.com.dio.businesscard.data.BusinessCard
 class BusinessCardAdapter:
     ListAdapter<BusinessCard, BusinessCardAdapter.ViewHolder>(DiffCallBack()) {
 
-    var listenerShare: (View) -> Unit = {}
+    var listenerClick: (View) -> Unit = {}
+    var listenerLongClick: (CardView, BusinessCard) -> Unit = { _, _ ->}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_business_card, parent, false)
@@ -33,6 +35,7 @@ class BusinessCardAdapter:
         private val tvEmail: TextView = itemView.findViewById(R.id.tv_email)
         private val tvCompany: TextView = itemView.findViewById(R.id.tv_company)
         private val cardContent: CardView = itemView.findViewById(R.id.card_content)
+        private val cardLayout: ConstraintLayout = itemView.findViewById(R.id.card_layout)
 
         fun bind(item: BusinessCard){
             tvName.text = item.name
@@ -41,7 +44,11 @@ class BusinessCardAdapter:
             tvCompany.text = item.company
             cardContent.setCardBackgroundColor(Color.parseColor(item.backgroundColor))
             cardContent.setOnClickListener {
-                listenerShare(it)
+                listenerClick(it)
+            }
+            cardContent.setOnLongClickListener {
+                listenerLongClick(cardContent, item)
+                true
             }
         }
     }
