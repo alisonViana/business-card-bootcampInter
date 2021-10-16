@@ -50,11 +50,24 @@ class ColorPickerActivity : AppCompatActivity() {
     }
 
     private fun setBackgroundExample(init: Boolean = false) {
-        val color = if (init) initColor else getBackgroundColor()
+        val color = if (init) setInitColor() else getBackgroundColor()
 
         ivBackground.setBackgroundColor(color)
         ivLine.setBackgroundColor(color)
         tvColor.text = "#%H".format(color)
+    }
+
+    private fun setInitColor(): Int {
+        val stringColor: String = "%H".format(initColor)
+        val valueRed: Int = stringColor.slice(2..3).toInt(16)
+        val valueGreen: Int = stringColor.slice(4..5).toInt(16)
+        val valueBlue: Int = stringColor.slice(6..7).toInt(16)
+
+        sbRed.progress = valueRed
+        sbGreen.progress = valueGreen
+        sbBlue.progress = valueBlue
+
+        return initColor
     }
 
     private fun getBackgroundColor(): Int{

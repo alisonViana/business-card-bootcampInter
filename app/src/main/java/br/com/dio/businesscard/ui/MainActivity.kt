@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun cancelSelection() {
-
         selectedCardList.forEach {pair ->
             pair.first.setCardBackgroundColor(Color.parseColor(pair.second.backgroundColor))
         }
@@ -89,11 +88,11 @@ class MainActivity : AppCompatActivity() {
             }
             setNegativeButton("Não", null)
             if (selectedCardList.size == 1) {
-                setTitle("Excluir cartão?")
-                setMessage("Deseja realmente excluir o cartão selecionado?")
+                setTitle(getString(R.string.delete_title_singular))
+                setMessage(getString(R.string.delete_message_singular))
             } else {
-                setTitle("Excluir Cartões?")
-                setMessage("Deseja realmente excluir os cartões selecionados?")
+                setTitle(getString(R.string.delete_title_plural))
+                setMessage(getString(R.string.delete_message_plural))
             }
         }.show()
     }
@@ -104,7 +103,8 @@ class MainActivity : AppCompatActivity() {
 
         if (!selectedCardList.contains(selectedCard)) {
             selectedCardList.add(selectedCard)
-            card.setCardBackgroundColor(Color.parseColor("#E600BCD4"))
+            card.setCardBackgroundColor(Color.parseColor(selectedColor))
+            updateToolbar()
         }
     }
 
@@ -113,7 +113,19 @@ class MainActivity : AppCompatActivity() {
         selectedCardList.clear()
     }
 
+    private fun updateToolbar() {
+        if (selectedCardList.size == 1) {
+            binding.selectMenu.tvItemsSelected.text = getString(R.string.selected_items_toolbar_singular)
+        } else {
+            binding.selectMenu.tvItemsSelected.text = "${selectedCardList.size} cartões selecionados"
+        }
+    }
+
     private fun showToast(message: String) {
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        const val selectedColor: String = "#BCB7F5F8"
     }
 }
