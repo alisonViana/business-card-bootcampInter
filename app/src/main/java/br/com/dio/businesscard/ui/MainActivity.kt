@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
                     mainViewModel.delete(pair.second)
                 }
                 hideToolbar()
+                showToast("Cartão excluído!")
             }
             setNegativeButton("Não", null)
             if (selectedCardList.size == 1) {

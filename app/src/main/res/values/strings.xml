@@ -26,7 +26,7 @@
     <!-- AlertDialog -->
     <string name="delete_title_singular">Excluir cartão?</string>
     <string name="delete_message_singular">Deseja realmente excluir o cartão selecionado?</string>
-    <string name="delete_title_plural">Excluir Cartões?</string>
+    <string name="delete_title_plural">Excluir cartões?</string>
     <string name="delete_message_plural">Deseja realmente excluir os cartões selecionados?</string>
     <string name="selected_items_toolbar_singular">1 Cartão Selecionado</string>
     <string name="selected_items_toolbar_plural">cartões selecionados</string>
