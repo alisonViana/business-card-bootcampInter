@@ -52,7 +52,7 @@ Aqui, trouxe a função de selecionar múltiplos cartões através de um toque l
 Implementei uma espécie de toolbar dinâmica, ela só é apresentada quando algum item é selecionado, nela estão as funções de compartilhar, excluir e remover seleção, além de apresentar a quantidade de itens selecionados.
 
  <p align="center"> 
-     <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/toolbar.png" alt="Destaque toolbar" width="720" height="108" />
+     <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/toolbar.png" alt="Destaque toolbar" width="360" height="54" />
 </p>
 
 <p align="center">
