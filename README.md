@@ -1,4 +1,4 @@
-# Gerador de Cartões de Visita   <img src="D:\Documentos\Programacao_Android\DIO\BusinessCard\images\icon.png" alt="ícone" style="zoom:33%;" />
+# Gerador de Cartões de Visita   <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/icon.png" alt="ícone" style="zoom:33%;" />
 Olá, este é o repositório do meu aplicativo Business Card, projeto desenvolvido para o Bootcamp Android Developer oferecido pela Digital Innovation One em parceria com o Inter.
 O aplicativo consiste em um gerador de cartões de visita onde é possível inserir informações como nome, e-mail, telefone e empresa, além da possibilidade de escolher a cor de fundo destes cartões e compartilhá-los em aplicativos instalados no dispositivo.  O aplicativo faz uso do Room para persistência dos dados localmente e utiliza os princípios de MVVM.
 
