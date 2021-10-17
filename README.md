@@ -13,6 +13,17 @@ O aplicativo consiste em um gerador de cartões de visita onde é possível inse
      [ Imagens: tela inicial e tela de novo cartão ]
 </p>
 
+Logo abaixo, está um exemplo de um card gerado no aplicativo.
+
+ <p align="center"> 
+     <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/card_example.png" alt="Card exemplo" width="333" height="141" />
+     <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/share_card.png" alt="Tela de compartilhamento" width="240" height="520" /> 
+</p>
+
+<p align="center">
+     [ Imagens: Card gerado pelo aplicativo e tela de compartilhamento ]
+</p>
+
 
 ## Toque pessoal
 
@@ -63,7 +74,7 @@ Implementei uma espécie de toolbar dinâmica, ela só é apresentada quando alg
 
 ### Excluir
 
-Outra função que optei por inserir, é a de exclusão dos cartões. Uma função simples, mas muito útil para o usuário em caso de erros ou modificações, mantendo a galeria limpa e prática
+Outra função que optei por inserir, é a de exclusão dos cartões. Uma função simples, mas muito útil para o usuário em caso de erros ou modificações, mantendo a galeria limpa e prática.
 
  <p align="center"> 
      <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/delete_card.png" alt="Alerta de exclusão de um cartão" width="240" height="520" />

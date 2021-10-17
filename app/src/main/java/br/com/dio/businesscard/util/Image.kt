@@ -52,7 +52,8 @@ class Image {
         }
 
         private fun saveMediaToStorage(context: Context, bitmap: Bitmap) {
-            val filename = "${System.currentTimeMillis()}.jpg"
+            //val filename = "${System.currentTimeMillis()}.jpg"
+            val filename = "${System.currentTimeMillis()}.png"
 
             var fos: OutputStream? = null
 
@@ -60,7 +61,8 @@ class Image {
                 context.contentResolver?.also { resolver ->
                     val contentValues = ContentValues().apply {
                         put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
-                        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+                        //put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+                        put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
                         put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
                     }
                     val imageUri: Uri? =
@@ -80,7 +82,8 @@ class Image {
             }
 
             fos?.use {
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+                //bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
                 Toast.makeText(context, "Imagem capturada com sucesso", Toast.LENGTH_SHORT).show()
             }
 
@@ -90,7 +93,8 @@ class Image {
             val shareIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_STREAM, imageUri)
-                type = "image/jpeg"
+                //type = "image/jpeg"
+                type = "image/png"
             }
             context.startActivity(
                 Intent.createChooser(
