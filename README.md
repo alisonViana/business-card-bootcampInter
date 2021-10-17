@@ -13,15 +13,15 @@ O aplicativo consiste em um gerador de cartões de visita onde é possível inse
      [ Imagens: tela inicial e tela de novo cartão ]
 </p>
 
-Logo abaixo, está um exemplo de um card gerado no aplicativo.
+
+Logo abaixo, está um exemplo de um cartão gerado no aplicativo.
 
  <p align="center"> 
      <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/card_example.png" alt="Card exemplo" width="333" height="141" />
-     <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/share_card.png" alt="Tela de compartilhamento" width="240" height="520" /> 
 </p>
 
 <p align="center">
-     [ Imagens: Card gerado pelo aplicativo e tela de compartilhamento ]
+     [ Imagens: Card gerado pelo aplicativo ]
 </p>
 
 
