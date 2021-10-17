@@ -14,14 +14,12 @@ O aplicativo consiste em um gerador de cartões de visita onde é possível inse
 </p>
 
 
-Logo abaixo, está um exemplo de um cartão gerado no aplicativo.
-
  <p align="center"> 
      <img src="https://github.com/alisonViana/business-card-bootcampInter/blob/master/images/card_example.png" alt="Card exemplo" width="333" height="141" />
 </p>
 
 <p align="center">
-     [ Imagens: Card gerado pelo aplicativo ]
+     [ Imagem: Card gerado pelo aplicativo ]
 </p>
 
 
