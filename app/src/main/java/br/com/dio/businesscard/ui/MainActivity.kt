@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         MainViewModelFactory((application as App).repository)
     }
     private val adapter by lazy { BusinessCardAdapter() }
-    private lateinit var selectMenu: View
+
 
     private val selectedCardList = mutableListOf<Pair<CardView, BusinessCard>>()
 
@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rvList.adapter = adapter
-        selectMenu = findViewById(R.id.select_menu)
         getAllBusinessCard()
         setListeners()
     }
@@ -99,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleSelectedCard(card: CardView, businessCard: BusinessCard) {
-        selectMenu.visibility = View.VISIBLE
+        binding.selectMenu.root.visibility = View.VISIBLE
         val selectedCard = Pair(card, businessCard)
 
         if (!selectedCardList.contains(selectedCard)) {
@@ -110,7 +109,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideToolbar() {
-        selectMenu.visibility = View.GONE
+        binding.selectMenu.root.visibility = View.GONE
         selectedCardList.clear()
     }
 

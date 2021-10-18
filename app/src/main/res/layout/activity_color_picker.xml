@@ -1,153 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:cardCornerRadius="16dp"
-    android:elevation="8dp">
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        android:elevation="8dp"
+        >
 
-        <TextView
-            android:id="@+id/tv_title_color_picker"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_color_picker"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/iv_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:padding="16dp"
+            >
 
-
-        <ImageView
-            android:id="@+id/iv_background"
-            android:layout_width="match_parent"
-            android:layout_height="124dp"
-            app:layout_constraintBottom_toTopOf="@id/sb_red"
-            app:layout_constraintTop_toTopOf="@id/tv_title_color_picker"
-            tools:background="@android:color/holo_red_dark" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_exemple"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_background"
-            app:layout_constraintTop_toTopOf="@id/iv_background" />
-
-        <SeekBar
-            android:id="@+id/sb_red"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:max="255"
-            android:progress="126"
-            android:progressTint="@android:color/holo_red_dark"
-            android:thumbTint="@android:color/holo_red_dark"
-            app:layout_constraintTop_toBottomOf="@id/iv_background" />
-
-        <SeekBar
-            android:id="@+id/sb_green"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:max="255"
-            android:progress="126"
-            android:progressTint="@android:color/holo_green_dark"
-            android:thumbTint="@android:color/holo_green_dark"
-            app:layout_constraintTop_toBottomOf="@id/sb_red" />
-
-        <SeekBar
-            android:id="@+id/sb_blue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:max="255"
-            android:progress="126"
-            android:progressTint="@android:color/holo_blue_dark"
-            android:thumbTint="@android:color/holo_blue_dark"
-            app:layout_constraintTop_toBottomOf="@id/sb_green" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_color"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="@string/hint_color"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sb_blue">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
+                android:id="@+id/tv_title_color_picker"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textCapWords"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/tv_color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@id/btn_cancel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sb_blue"
-            tools:text="#F122B459" />
-
-        <ImageView
-            android:id="@+id/iv_line"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            app:layout_constraintStart_toStartOf="@id/tv_color"
-            app:layout_constraintEnd_toEndOf="@id/tv_color"
-            app:layout_constraintTop_toBottomOf="@id/tv_color"
-            tools:background="@android:color/holo_red_dark"
-            />
+                android:layout_height="wrap_content"
+                android:text="@string/label_color_picker"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@id/iv_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/btn_cancel"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@id/btn_confirm_color"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_color"
-            android:backgroundTint="@color/orange_light"
-            />
+            <ImageView
+                android:id="@+id/iv_background"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                app:layout_constraintBottom_toTopOf="@id/sb_red"
+                app:layout_constraintTop_toTopOf="@id/tv_title_color_picker"
+                tools:background="@android:color/holo_red_dark" />
 
-        <Button
-            android:id="@+id/btn_confirm_color"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/btn_pick_color"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_cancel"
-            app:layout_constraintTop_toBottomOf="@id/tv_color"
-            android:backgroundTint="@color/orange_light"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_exemple"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_background"
+                app:layout_constraintTop_toTopOf="@id/iv_background" />
+
+            <SeekBar
+                android:id="@+id/sb_red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:max="255"
+                android:progress="126"
+                android:progressTint="@android:color/holo_red_dark"
+                android:thumbTint="@android:color/holo_red_dark"
+                app:layout_constraintTop_toBottomOf="@id/iv_background" />
+
+            <SeekBar
+                android:id="@+id/sb_green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:max="255"
+                android:progress="126"
+                android:progressTint="@android:color/holo_green_dark"
+                android:thumbTint="@android:color/holo_green_dark"
+                app:layout_constraintTop_toBottomOf="@id/sb_red" />
+
+            <SeekBar
+                android:id="@+id/sb_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:max="255"
+                android:progress="126"
+                android:progressTint="@android:color/holo_blue_dark"
+                android:thumbTint="@android:color/holo_blue_dark"
+                app:layout_constraintTop_toBottomOf="@id/sb_green" />
+
+            <TextView
+                android:id="@+id/tv_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sb_blue"
+                tools:text="#F122B459" />
+
+            <ImageView
+                android:id="@+id/iv_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="@id/tv_color"
+                app:layout_constraintEnd_toEndOf="@id/tv_color"
+                app:layout_constraintTop_toBottomOf="@id/tv_color"
+                tools:background="@android:color/holo_red_dark"
+                />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/btn_cancel"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/btn_confirm_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_color"
+                    android:backgroundTint="@color/orange_light" />
 
-</androidx.cardview.widget.CardView>
+                <Button
+                    android:id="@+id/btn_confirm_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/btn_pick_color"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_cancel"
+                    app:layout_constraintTop_toBottomOf="@id/tv_color"
+                    android:backgroundTint="@color/orange_light" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
