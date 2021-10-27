@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.PhoneNumberFormattingTextWatcher
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -47,6 +48,8 @@ class AddBusinessCardActivity : AppCompatActivity(){
     }
 
     private fun setListeners() {
+        binding.tilPhone.editText?.addTextChangedListener(PhoneNumberFormattingTextWatcher("BR"))
+
         binding.btnClose.setOnClickListener {
             finish()
         }
