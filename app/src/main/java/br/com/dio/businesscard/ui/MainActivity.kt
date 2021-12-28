@@ -114,11 +114,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateToolbar() {
-        if (selectedCardList.size == 1) {
-            binding.selectMenu.tvItemsSelected.text = getString(R.string.selected_items_toolbar_singular)
-        } else {
-            binding.selectMenu.tvItemsSelected.text = "${selectedCardList.size} cartões selecionados"
-        }
+        binding.selectMenu.tvItemsSelected.text =
+            String.format(resources.getQuantityString(R.plurals.selected_items_toolbar, selectedCardList.size), selectedCardList.size)
     }
 
     private fun showToast(message: String) {

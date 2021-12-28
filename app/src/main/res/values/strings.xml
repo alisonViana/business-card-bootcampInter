@@ -31,4 +31,9 @@
     <string name="selected_items_toolbar_singular">1 Cartão Selecionado</string>
     <string name="selected_items_toolbar_plural">cartões selecionados</string>
 
+    <plurals name="selected_items_toolbar">
+        <item quantity="one">%d cartão selecionado</item>
+        <item quantity="other">%d cartões selecionados</item>
+    </plurals>
+
 </resources>
